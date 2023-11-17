@@ -5,7 +5,7 @@ import time
 import os
 
 # Setup Selenium WebDriver
-driver = webdriver.Chrome('path_to_chromedriver')
+driver = webdriver.Chrome()
 driver.get('https://www.hw.com/about/Faculty-Staff-Directory')
 
 # Find and click the button to load images
