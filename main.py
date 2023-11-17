@@ -5,11 +5,15 @@ import requests
 import time
 import os
 
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
 # Setup Selenium WebDriver
 driver = webdriver.Chrome()  # Assumes chromedriver is in your PATH
 driver.get('https://www.hw.com/about/Faculty-Staff-Directory')
 
-# Find and click the button to load images
+WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'btnAll')))
+
 button = driver.find_element(By.ID, 'btnAll')
 button.click()
 
