@@ -1,16 +1,16 @@
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from bs4 import BeautifulSoup
 import requests
 import time
 import os
 
 # Setup Selenium WebDriver
-driver = webdriver.Chrome()
+driver = webdriver.Chrome()  # Assumes chromedriver is in your PATH
 driver.get('https://www.hw.com/about/Faculty-Staff-Directory')
 
 # Find and click the button to load images
-button_selector = 'your_button_selector_here'  # Replace with the actual CSS selector of the button
-button = driver.find_element_by_css_selector(button_selector)
+button = driver.find_element(By.ID, 'btnAll')
 button.click()
 
 # Wait for content to load
